@@ -1,6 +1,6 @@
 services:
-  spring-backend:
-    build: .
+  backend:
+    build: ./backend
     depends_on:
       - postgresql
     ports:
@@ -11,5 +11,3 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: db_caronas_ufrn
-    ports:
-      - "5432:5432"
