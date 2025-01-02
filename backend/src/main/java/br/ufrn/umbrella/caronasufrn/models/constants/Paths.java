@@ -9,12 +9,14 @@ public class Paths {
         
     };
     public final static String[] GET_PRIVATE_PATHS ={
-        "/user"
+        "/user",
+        "/ride"
     };
 
     public final static String[] POST_PUBLIC_PATHS = {
         "/login",
-        "/user"
+        "/user",
+        "/ride"
     };
 
     public final static String[] POST_PRIVATE_PATHS = {
