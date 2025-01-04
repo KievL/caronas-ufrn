@@ -1,0 +1,33 @@
+body{
+    height: 100%;
+    width: 100%;
+}
+
+mat-toolbar {
+    left: 25%;
+    width: 50%;
+    position: relative;
+    z-index: 5;
+}
+
+.content{
+    padding: 24px;
+}
+
+mat-sidenav-container{
+    width: 50%;
+    left: 25%;
+    height: calc(100vh - 64px);
+}
+
+mat-sidenav{
+    z-index: 10;
+    top: 90%;
+    height: 30%;
+    width: 100%;
+}
+
+mat-sidenav-content{
+    width: 100%;
+    right: 100%;
+}
