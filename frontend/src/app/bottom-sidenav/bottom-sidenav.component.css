@@ -1,0 +1,20 @@
+.container{
+    width: 100%;
+}
+
+a{
+    width: 10%;
+    flex: auto;
+    flex-direction: column;
+}
+
+span{
+}
+
+.row{
+    width: 100%;
+}
+
+.col{
+    width: 50%;
+}
