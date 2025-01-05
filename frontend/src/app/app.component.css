@@ -4,11 +4,6 @@ body{
 }
 
 mat-toolbar {
-<<<<<<< HEAD
-=======
-    left: 25%;
-    width: 50%;
->>>>>>> b8f3bec478aee08111091423732fef4856c5c2a0
     position: relative;
     z-index: 5;
 }
@@ -18,11 +13,6 @@ mat-toolbar {
 }
 
 mat-sidenav-container{
-<<<<<<< HEAD
-=======
-    width: 50%;
-    left: 25%;
->>>>>>> b8f3bec478aee08111091423732fef4856c5c2a0
     height: calc(100vh - 64px);
 }
 

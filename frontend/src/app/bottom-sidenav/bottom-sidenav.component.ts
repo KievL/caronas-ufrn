@@ -29,6 +29,11 @@ export class BottomSidenavComponent {
       icon: 'add_circle',
       label: 'Oferecer',
       route: 'trip-ongoing'
+    },
+    {
+      icon: 'person',
+      label: 'Perfil',
+      route: 'profile'
     }
 
   ]);

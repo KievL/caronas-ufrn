@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { TripAvailableComponent } from './trip-available/trip-available.component';
 import { TripOngoingComponent } from './trip-ongoing/trip-ongoing.component';
+import { ProfileComponent } from './profile/profile.component';
 
 export const routes: Routes = [
     {
@@ -15,5 +16,10 @@ export const routes: Routes = [
     {
         path:'trip-ongoing',
         component: TripOngoingComponent
+    },
+    {
+        path:'profile',
+        component: ProfileComponent
     }
+
 ];
