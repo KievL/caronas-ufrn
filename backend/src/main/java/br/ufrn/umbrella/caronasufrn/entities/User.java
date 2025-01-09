@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import br.ufrn.umbrella.caronasufrn.models.enums.UserRoles;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -18,6 +19,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -41,20 +43,22 @@ public class User implements UserDetails{
 	private String passwordHash;
 	
 	private Float rating;
+
+	private String course;
+	private String car;
 	
 	@Column(name="image_url")
 	private String imageUrl;
 	
 	@Column(name="rides_provided")
-	private Long ridesProvided;
+	private Integer ridesProvided;
 	
-	@Column(name="rides_taken")
-	private Long ridesTaken;
-	
-	private String car;
-	
-	private String course;
-	
+	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "passengers")
+	private List<Ride> ridesAsPassenger;
+
+	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "requesters")
+	private List<Ride> ridesRequested;
+
 	@Column(name="enrollment_number")
 	private String enrollmentNumber;
 	
