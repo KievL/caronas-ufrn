@@ -45,6 +45,7 @@ public class User implements UserDetails{
 	private Float rating;
 
 	private String course;
+	private String car;
 	
 	@Column(name="image_url")
 	private String imageUrl;
