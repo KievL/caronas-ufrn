@@ -9,7 +9,6 @@ CREATE TABLE IF NOT EXISTS users(
 	password_hash VARCHAR NOT NULL,
 	rating DECIMAL,
 	rides_provided BIGINT,
-	rides_taken BIGINT,
 	role VARCHAR NOT NULL
 );
 
