@@ -59,6 +59,7 @@ public class User implements UserDetails{
 	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "requesters")
 	private List<Ride> ridesRequested;
 
+	@Column(name="enrollment_number")
 	private String enrollmentNumber;
 	
 	@Enumerated(EnumType.STRING)
