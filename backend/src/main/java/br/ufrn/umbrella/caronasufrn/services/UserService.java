@@ -41,6 +41,7 @@ public class UserService {
         BeanUtils.copyProperties(userDTO, user);
 
         user.setRole(UserRoles.USER);
+        user.setRidesProvided(0);
 
         user.setPasswordHash(passwordEncoder.encode(user.getPasswordHash()));
         
