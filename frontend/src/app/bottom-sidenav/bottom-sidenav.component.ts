@@ -33,7 +33,7 @@ export class BottomSidenavComponent {
     {
       icon: 'check',
       label: 'Suas Viagens',
-      route: 'tri-history'
+      route: 'trip-history'
     },
     {
       icon: 'chat_bubble',
