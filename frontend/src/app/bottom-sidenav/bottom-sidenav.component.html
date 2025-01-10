@@ -1,16 +1,24 @@
-<mat-nav-list>
-    <div class="container">
-        <div class="row">
-            <a mat-list-item *ngFor="let item of menuItems()" routerLink="{{ item.route }}">
-                <!--<div class="col-sm-6">-->
-                    <!--<div class="row-6">-->
-                        <mat-icon matListItemIcon class="menu-icon">{{ item.icon }}</mat-icon>
-                <!--</div>-->
-                    <!--<div class="row-6">-->
-                        <span matListItemTitle class="menu-title">{{ item.label }}</span>
-                    <!--</div>-->
-                <!--</div>-->
-            </a>
-        </div>
+<mat-nav-list class="bg-dark text-center py-2">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Linha dos Ícones -->
+      <div class="col-2 text-center px-0" *ngFor="let item of menuItems()">
+        <a mat-list-item
+          class="menu-link d-flex flex-column align-items-center justify-content-center text-decoration-none"
+          routerLink="{{ item.route }}">
+          <mat-icon class="menu-icon">{{ item.icon }}</mat-icon>
+        </a>
+      </div>
     </div>
+    <div class="row">
+      <!-- Linha dos Textos -->
+      <div class="col-2 text-center px-0" *ngFor="let item of menuItems()">
+        <a mat-list-item
+          class="menu-link d-flex flex-column align-items-center justify-content-center text-decoration-none"
+          routerLink="{{ item.route }}">
+          <span class="menu-title">{{ item.label }}</span>
+        </a>
+      </div>
+    </div>
+  </div>
 </mat-nav-list>

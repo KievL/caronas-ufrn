@@ -4,6 +4,7 @@ body{
 }
 
 mat-toolbar {
+    background-color: #2B558C;
     position: relative;
     z-index: 5;
 }
@@ -13,17 +14,19 @@ mat-toolbar {
 }
 
 mat-sidenav-container{
+    
     height: calc(100vh - 64px);
 }
 
 mat-sidenav{
-    z-index: 10;
-    top: 90%;
+    z-index: 100;
+    top: 87%;
     height: 30%;
     width: 100%;
 }
 
 mat-sidenav-content{
+    background-color: #DBDBDB;
     width: 100%;
     right: 100%;
 }

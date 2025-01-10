@@ -31,6 +31,16 @@ export class BottomSidenavComponent {
       route: 'trip-ongoing'
     },
     {
+      icon: 'check',
+      label: 'Suas Viagens',
+      route: 'tri-history'
+    },
+    {
+      icon: 'chat_bubble',
+      label: 'Mensagens',
+      route: 'chat-messenger'
+    },
+    {
       icon: 'person',
       label: 'Perfil',
       route: 'profile'

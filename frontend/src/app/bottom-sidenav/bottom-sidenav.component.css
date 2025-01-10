@@ -1,20 +1,35 @@
-.container{
-    width: 100%;
+/* Ícones */
+.menu-icon {
+  font-size: 24px;
+  color: #60B6BF !important;
+  margin-bottom: 2px;
+  transition: color 0.3s ease-in-out;
 }
 
-a{
-    width: 10%;
-    flex: auto;
-    flex-direction: column;
+/* Textos */
+.menu-title {
+  font-size: 12px;
+  color: #60B6BF !important;
+  line-height: 1;
+  text-align: center;
+  transition: color 0.3s ease-in-out;
 }
 
-span{
-}
 
-.row{
-    width: 100%;
-}
+/* Ajuste para Telas Pequenas */
+@media (max-width: 375px) {
+  .menu-icon {
+    font-size: 20px;
+    margin-bottom: 1px;
+  }
 
-.col{
-    width: 50%;
+  .menu-title {
+    font-size: 10px;
+  }
+
+  .col-2 {
+    flex: 0 0 20%;
+    max-width: 20%;
+    height: 25px !important;
+  }
 }
