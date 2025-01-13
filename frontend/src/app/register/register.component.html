@@ -1,1 +1,93 @@
-<p>register works!</p>
+<body class="d-flex align-items-top">
+  <div *ngIf="notification"
+    [ngClass]="{'success': notification.type === 'success', 'error': notification.type === 'error'}"
+    class="notification">
+    {{ notification.message }}
+  </div>
+
+  <div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 main-register p-0">
+        <div class="container-fluid">
+          <div class="row top-register align-items-center justify-content-center">
+            <div class="col-6 d-flex align-items-center justify-content-center p-2 p-md-2 p-lg-2 p-xl-3">
+              <h1>Cadastro</h1>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="mt-2 mb-3">
+            <div class="col-6 d-flex align-items-center justify-content-start">
+              <button (click)="goToMain()" class="arrow-button col-12 px-0 d-flex">
+                <mat-icon class="col-4 custom-arrow-icon" aria-hidden="false" aria-label="Arrow back icon"
+                  fontIcon="arrow_back"></mat-icon>
+                <div class="col-5 justify-content-start align-items-center d-flex" style="margin-left: 10px;">
+                  <h3 class="back-text mb-0">VOLTAR</h3>
+                </div>
+              </button>
+            </div>
+          </div>
+          <div class="mt-3 align-items-center justify-content-center d-flex">
+            <img (click)="goToMain()" src="../../assets/icons/sigaa.svg" alt="SIGAA Logo" class="sigaa-logo" />
+          </div>
+          <div class="mt-3 d-flex align-items-center justify-content-center gap-3">
+            <p class="alternative-text justify-content-center m-0">ou use o seu email para registro</p>
+          </div>
+          <form [formGroup]="registerUser" class="mt-4">
+            <div class="mt-0">
+              <h4 class="col-12 mx-1 mb-1">Digite seu nome</h4>
+              <mat-form-field class="col-12 mt-1">
+                <mat-label>Nome</mat-label>
+                <input matInput type="text" maxlength="254" formControlName="name" placeholder="João">
+                <mat-error *ngIf="registerUser.get('name')?.hasError('required')">O nome é obrigatório.</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="mt-0">
+              <h4 class="col-12 mx-1 mb-1">Digite seu email</h4>
+              <mat-form-field class="col-12 mt-1">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" maxlength="254" formControlName="email" placeholder="email@email">
+                <mat-error *ngIf="registerUser.get('email')?.hasError('required')">O email é obrigatório.</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="mt-0">
+              <h4 class="col-12 mx-1 mb-1">Digite sua senha</h4>
+              <mat-form-field class="col-12 mt-1 custom-form-field">
+                <mat-label>Senha</mat-label>
+                <input matInput [type]="showPassword ? 'text' : 'password'" formControlName="password" maxlength="128"
+                  minlength="8" placeholder="password">
+                <mat-error *ngIf="registerUser.get('password')?.hasError('required')">A senha é obrigatória.</mat-error>
+                <button mat-icon-button matSuffix type="button" (click)="togglePasswordVisibility()"
+                  aria-label="Toggle password visibility">
+                  <mat-icon>{{ showPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+            <div class="mt-0">
+              <h4 class="col-12 mx-1 mb-1">Seu curso</h4>
+              <mat-form-field class="col-12 mt-1">
+                <mat-label>Curso</mat-label>
+                <input matInput type="text" maxlength="254" formControlName="course" placeholder="Jornalismo">
+                <mat-error *ngIf="registerUser.get('course')?.hasError('required')">O curso é obrigatório.</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="mt-0">
+              <h4 class="col-12 mx-1 mb-1">Sua matrícula</h4>
+              <mat-form-field class="col-12 mt-1">
+                <mat-label>Matrícula</mat-label>
+                <input matInput type="text" minlength="11" maxlength="11" formControlName="enrollmentNumber"
+                  placeholder="20240012345">
+                <mat-error *ngIf="registerUser.get('enrollmentNumber')?.hasError('required')">A matrícula é
+                  obrigatória.</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="d-flex align-items-center justify-content-center mt-3">
+              <button (click)="register()" type="submit" id="login-register-btn"
+                [disabled]="registerUser.invalid || loggingIn">Cadastrar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
