@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.mat-typography,
+.mat-typography p {
+  font-family: 'Rubik', sans-serif;
+  font-weight: normal;
+}
+
+.mat-typography h1,
+.mat-typography h2,
+.mat-typography h3,
+.mat-typography h4 {
+  font-family: 'Rubik', sans-serif;
+  font-weight: bold;
+}
