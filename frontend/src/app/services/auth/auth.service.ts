@@ -18,6 +18,16 @@ export class AuthService {
     return this.http.post<any>(`${this.apiUrl}/user`, userData);
   }
 
+  loginUser(credentials: { email: string, password: string }): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/login`, credentials);
+  }
+
+  logout(): void {
+    this.uToken = null;
+    localStorage.removeItem('authToken');
+    sessionStorage.removeItem('authToken');
+  }
+
   getCurrentToken(): string | null {
     return this.uToken;
   }

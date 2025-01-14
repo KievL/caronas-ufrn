@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { AuthService } from '../services/auth/auth.service';
 import { Notification, NotificationService } from '../services/notifications/notification.service';
+import { passwordValidator } from '../validators/password.validator';
 
 @Component({
   selector: 'app-register',
@@ -28,7 +29,7 @@ import { Notification, NotificationService } from '../services/notifications/not
 export class RegisterComponent {
   notification: Notification | null = null;
 
-  loggingIn: boolean = false;
+  registering: boolean = false;
   registerUser!: FormGroup;
   recoverBtnHtml: boolean = false;
   recoverBtn = new BehaviorSubject<boolean>(false);
@@ -44,11 +45,11 @@ export class RegisterComponent {
   ngOnInit(): void {
     this.recoverBtn.next(false);
     this.registerUser = this._formBuilder.group({
-      name: new FormControl('', Validators.required),
-      email: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required),
-      course: new FormControl('', Validators.required),
-      enrollmentNumber: new FormControl('', Validators.required),
+      name: new FormControl('', [Validators.required, Validators.maxLength(254), Validators.pattern('^[a-zA-ZÀ-ÿ ]*$')]),
+      email: new FormControl('', [Validators.required, Validators.maxLength(254), Validators.email]),
+      password: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(128), passwordValidator()]),
+      course: new FormControl('', [Validators.required, Validators.maxLength(254), Validators.pattern('^[a-zA-ZÀ-ÿ ]*$')]),
+      enrollmentNumber: new FormControl('', [Validators.required, Validators.minLength(11), Validators.maxLength(11), Validators.pattern('^[0-9]*$')]),
     });
 
     this.notificationService.notification$.subscribe((notification) => {
@@ -60,7 +61,7 @@ export class RegisterComponent {
     if (this.registerUser.valid) {
       const { name, email, password, course, enrollmentNumber } = this.registerUser.value;
 
-      this.loggingIn = true;
+      this.registering = true;
 
       const userData = {
         name,
@@ -81,7 +82,7 @@ export class RegisterComponent {
           this.notificationService.showNotification('error', 'Erro ao registrar usuário. Tente novamente.');
         },
         complete: () => {
-          this.loggingIn = false;
+          this.registering = false;
           console.log("fim");
         }
       });
