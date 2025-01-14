@@ -1,0 +1,12 @@
+{
+  "name": "caronas-ufrn",
+  "version": "1.0.0",
+  "description": "Aplicativo de caronas para estudantes da UFRN feito com Angular e Spring Boot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
