@@ -1,5 +1,9 @@
 # Caronas UFRN
-Aplicativo de caronas para estudantes da UFRN feito com Angular e Spring Boot (descontinuado).
+Aplicativo de caronas para estudantes da UFRN feito com Angular e Spring Boot.
+
+# Frontend
+- Os componentes do frontend são elaborados utilizando o Angular Material
+- O design das telas estão em: [Figma](https://www.figma.com/design/awMQW8zCvIXvVu4DrWkRGY/CTA?node-id=0-1&t=bU8GXdX3nTHSooZb-1)
 
 # API Tutorial
 Este tutorial tem o intuito de ensinar a rodar a API do Spring Boot localmente para ser usada de teste pelo frontend.
@@ -112,3 +116,7 @@ Para essas rotas que requerem autenticação, você deve adicionar no cabeçalho
 O token é recebido toda vez que um login é realizado. No exemplo abaixo, podemos ver a resposta da requisição de um login. No caso, a string do token da resposta abaixo deve ser usada no lugar de ***<token>*** no cabeçalho acima.
 
 ![auth](media/auth.png)
+
+# Entidades
+
+![entities](media/entidades.png)
